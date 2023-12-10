@@ -23,9 +23,9 @@ echo     CONSTRAINT unique_movie_title_director UNIQUE (title, director_id) >> c
 echo ); >> create_tables.sql
 echo. >> create_tables.sql
 echo CREATE TABLE MovieCast ( >> create_tables.sql
+echo     id SERIAL PRIMARY KEY, >> create_tables.sql
 echo     movie_id INTEGER REFERENCES Movies(id), >> create_tables.sql
-echo     person_id INTEGER REFERENCES People(id), >> create_tables.sql
-echo     PRIMARY KEY (movie_id, person_id) >> create_tables.sql
+echo     actor_id INTEGER REFERENCES People(id) >> create_tables.sql
 echo ); >> create_tables.sql
 
 REM Run SQL commands in the PostgreSQL container

@@ -12,7 +12,7 @@ class MovieDatabase:
         self.check_and_create_tables()
         self.people = [] 
 
-    def execute_query(self, query, params=None):
+    def execute_query(self, query, params: tuple=None):
         with psycopg2.connect(**self.connection_options) as conn:
             with conn.cursor() as cursor:
                 cursor.execute(query, params)
@@ -105,14 +105,6 @@ class MovieDatabase:
     def save_data(self):
         # Save data - not needed in this implementation
         pass
-
-    def parse_time(self, time_str):
-        # Parse the time in HH:MM format
-        try:
-            return datetime.strptime(time_str, '%H:%M').time()
-        except ValueError:
-            print('Error: Bad input format (hh:mm), try again!')
-            return self.parse_time(input('Length: '))
 
     def get_person_id(self, name):
         # Get the ID of a person from the People table

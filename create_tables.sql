@@ -14,7 +14,7 @@ CREATE TABLE Movies (
 ); 
  
 CREATE TABLE MovieCast ( 
+    id SERIAL PRIMARY KEY, 
     movie_id INTEGER REFERENCES Movies(id), 
-    person_id INTEGER REFERENCES People(id), 
-    PRIMARY KEY (movie_id, person_id) 
+    actor_id INTEGER REFERENCES People(id) 
 ); 
