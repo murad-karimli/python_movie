@@ -45,14 +45,15 @@ Before running the application, ensure you have the following:
     docker-compose up --build -d
     ```
 
+    - PostgreSQL runs on port 5432, and Adminer on port 8080.
+
 ## Running the Application
 
 To run the application, execute the following command:
 
 ```bash
 python app.py
-
-
+```
 Usage
 Upon successful startup, the application supports the following commands:
 
